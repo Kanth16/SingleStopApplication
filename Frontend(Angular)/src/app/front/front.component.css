@@ -1,0 +1,247 @@
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+form {
+  width: 300px;
+  /* margin: 0 auto; */
+}
+body{
+  height: auto;
+
+}
+.title{
+   text-align: center;
+   color: rgb(255, 255, 255);
+
+   /* color: rgb(183, 219, 115); */
+   font-family: "Trebuchet MS", Helvetica, sans-serif;
+   font-weight: bold;
+   font-size: 30px;
+   background-color:rgb(11, 11, 148);
+   padding: 25px 15px
+
+}
+.mainselection{
+  margin-left: 20px;
+ background-color: transparent;
+  width: 190%;
+}
+
+select {
+padding: 10px 10px;
+border: 1px solid rgb(8, 8, 8);
+border-radius: 4px;  
+margin-left: 20px;
+font-size: 18px;
+font-family: "Trebuchet MS", Helvetica, sans-serif;
+/* font-style: italic; */
+width: 378px; 
+}
+
+#menuToggle
+{
+  top: 20px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  margin-left: 20px;
+  display: block;
+  position: relative;
+  left: 0px;  
+  z-index: 1;  
+  -webkit-user-select: none;
+  user-select: none;
+
+}
+
+span.first{
+  margin-top:200px;
+
+}
+#menuToggle a
+{
+  text-decoration: none;
+  color: white;  
+  border-bottom: cornsilk;
+  transition: color 0.3s ease;
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 4px 16px;
+  width: 145px;
+  border-bottom: 2px solid;
+  border-bottom-style: groove;
+  margin-bottom: auto;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#menuToggle a:hover
+{
+  background-color: white;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  background: linear-gradient(to right, red);
+  color: rgb(11, 11, 148);
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;   
+  cursor: pointer;   
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */   
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-top: auto;
+  margin-bottom: 5px;
+  position: relative;   
+  background: white;
+  border-radius: 3px;   
+  z-index: 1;   
+  /* float: left; */
+  transform-origin: 4px 0px;   
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+#menu
+{
+  position: absolute;
+  width: 200px;
+  height: 1000px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;   
+  background-color:rgb(11, 11, 148);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+
+#menu li
+{
+  padding: 10px 5px;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+.mat-raised-button{
+  background-color:rgb(11, 11, 148);
+  color:white;
+}
+
+.mat-card {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  position: relative;
+  padding: 16px;
+  border-radius: 8px;
+  top: 30px;
+  width: 95%;
+  margin-left: 3%;
+}
+.fa-home{
+
+  font-size: 30px;
+}
+.fa-search
+{
+  font-size: 25px;
+}

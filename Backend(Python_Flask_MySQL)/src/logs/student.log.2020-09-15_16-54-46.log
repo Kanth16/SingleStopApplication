@@ -1,0 +1,350 @@
+2020-09-15 16:51:55,763 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.11s dimension_payment_details Table CREATED
+2020-09-15 16:51:56,318 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:51:56,925 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.11s dimension_payment_details Table CREATED
+2020-09-15 16:51:57,476 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:51:57,476 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:51:57,476 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:51:58,163 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:51:58,163 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:51:58,163 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:51:58,348 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.09s dimension_payment_details Table CREATED
+2020-09-15 16:51:58,348 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.09s dimension_payment_details Table CREATED
+2020-09-15 16:51:58,348 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.09s dimension_payment_details Table CREATED
+2020-09-15 16:51:58,926 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:51:58] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:51:58,926 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:51:58] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:51:58,926 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:51:58] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:51:59,168 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:51:59,168 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:51:59,168 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:51:59,954 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:51:59,954 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:51:59,954 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:51:59,954 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:52:00,416 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:00] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:00,416 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:00] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:00,416 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:00] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:00,416 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:00] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:03,902 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:03] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:03,902 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:03] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:03,902 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:03] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:03,902 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:03] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:10,884 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:10] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:10,884 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:10] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:10,884 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:10] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:10,884 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:10] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:35,544 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.19s dimension_payment_details Table CREATED
+2020-09-15 16:52:35,544 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.19s dimension_payment_details Table CREATED
+2020-09-15 16:52:35,544 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.19s dimension_payment_details Table CREATED
+2020-09-15 16:52:35,544 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.19s dimension_payment_details Table CREATED
+2020-09-15 16:52:35,544 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.19s dimension_payment_details Table CREATED
+2020-09-15 16:52:36,159 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:36,159 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:36,159 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:36,159 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:36,159 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:36,871 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:36,871 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:36,871 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:36,871 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:36,871 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:37,521 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:37,521 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:37,521 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:37,521 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:37,521 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:38,109 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:38,109 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:38,109 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:38,109 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:38,109 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:38,726 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:38,726 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:38,726 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:38,726 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:38,726 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:39,334 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:39,334 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:39,334 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:39,334 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:39,334 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:52:39,889 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:39,889 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:39,889 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:39,889 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:39,889 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:52:40,513 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:52:40,513 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:52:40,513 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:52:40,513 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:52:40,513 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:52:40,513 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:52:40,906 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:40,906 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:40,906 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:40,906 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:40,906 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:40,906 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:52:42,883 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:42,883 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:42,883 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:42,883 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:42,883 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:42,883 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:52:46,518 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:46] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:46,518 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:46] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:46,518 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:46] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:46,518 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:46] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:46,518 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:46] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:52:46,518 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:52:46] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:53:22,461 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:53:22] "[37mOPTIONS /update/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:53:23,169 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:53:23] "[37mPOST /update/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:53:23,561 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:53:23] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:53:53,507 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.21s dimension_payment_details Table CREATED
+2020-09-15 16:53:54,301 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:53:55,250 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:53:56,034 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:53:56,838 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.1s dimension_payment_details Table CREATED
+2020-09-15 16:53:57,552 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:53:58,515 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:53:58,515 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:53:59,227 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:53:59] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:53:59,227 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:53:59] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:54:01,774 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:01] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:54:01,774 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:01] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:54:06,063 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:06] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:54:06,063 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:06] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:54:40,059 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY INT,
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.11s dimension_payment_details Table CREATED
+2020-09-15 16:54:40,059 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY INT,
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.11s dimension_payment_details Table CREATED
+2020-09-15 16:54:40,949 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:54:40,949 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:54:41,998 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY INT,
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.09s dimension_payment_details Table CREATED
+2020-09-15 16:54:41,998 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY INT,
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.09s dimension_payment_details Table CREATED
+2020-09-15 16:54:42,761 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:54:42,761 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:54:43,614 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY INT,
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.09s dimension_payment_details Table CREATED
+2020-09-15 16:54:43,614 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY INT,
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.09s dimension_payment_details Table CREATED
+2020-09-15 16:54:44,439 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:54:44,439 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:54:45,432 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY INT,
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.26s dimension_payment_details Table CREATED
+2020-09-15 16:54:45,432 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY INT,
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.26s dimension_payment_details Table CREATED
+2020-09-15 16:54:46,223 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:54:46,223 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:54:47,012 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:54:47,012 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:54:47,012 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:54:47,672 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:47] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:54:47,672 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:47] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:54:47,672 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:47] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:54:51,236 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:51] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:54:51,236 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:51] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:54:51,236 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:51] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:54:57,400 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:57] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:54:57,400 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:54:57] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -

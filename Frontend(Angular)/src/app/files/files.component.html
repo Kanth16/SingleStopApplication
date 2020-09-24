@@ -1,0 +1,13 @@
+<div style= "margin-left:60px">
+    <p style="font-family: Trebuchet MS, Helvetica, sans-serif;font-size:16px">Choose a .csv file to upload </p>
+    <input style="font-family: Trebuchet MS, Helvetica, sans-serif;" type="file" (change)="handleFileSelect($event)"/>
+    <br>
+    <br>
+    
+    <button style="font-family: Trebuchet MS, Helvetica, sans-serif;" mat-raised-button (click)="up()" >UPLOAD</button>
+    <br>
+    <br>
+    <div *ngIf="value">
+    <button styel="font-family: Trebuchet MS, Helvetica, sans-serif;" mat-raised-button (click)="createcomp()" >CREATE</button>
+    </div>
+    </div>

@@ -1,0 +1,6 @@
+2020-09-16 09:11:12,833 - 17756 INFO - dimension_placement_details Records Inserted
+2020-09-16 09:11:12,908 - 17756 INFO - 127.0.0.1 - - [16/Sep/2020 09:11:12] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-16 09:11:14,624 - 17756 INFO - 127.0.0.1 - - [16/Sep/2020 09:11:14] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-16 09:11:37,250 - 17756 INFO - 127.0.0.1 - - [16/Sep/2020 09:11:37] "[37mOPTIONS /testing HTTP/1.1[0m" 200 -
+2020-09-16 09:11:38,835 - 17756 INFO - 127.0.0.1 - - [16/Sep/2020 09:11:38] "[37mPOST /testing HTTP/1.1[0m" 200 -
+2020-09-16 09:11:45,358 - 17756 INFO -  * Detected change in 'C:\\Users\\umapriya.krishnan\\Desktop\\studentProject_1409\\studentProject\\backend\\src\\test\\ut.py', reloading

@@ -1,0 +1,22 @@
+2020-09-16 10:56:07,802 - 10296 INFO - dimension_placement_details Records Inserted
+2020-09-16 10:56:07,887 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:07] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-16 10:56:09,400 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:09] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-16 10:56:13,862 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:13] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:22,247 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:22] "[37mOPTIONS /updateID/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:22,249 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:22] "[37mOPTIONS /update/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:22,530 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:22] "[37mPOST /updateID/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:22,687 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:22] "[37mPOST /update/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:22,791 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:22] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:28,347 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:28] "[37mGET /select/fact_placement HTTP/1.1[0m" 200 -
+2020-09-16 10:56:33,519 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:33] "[37mGET /select/fact_placement HTTP/1.1[0m" 200 -
+2020-09-16 10:56:38,498 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:38] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:45,298 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:45] "[37mOPTIONS /updateID/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:45,301 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:45] "[37mOPTIONS /update/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:45,558 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:45] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:45,728 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:45] "[37mPOST /updateID/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:45,834 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:45] "[37mPOST /update/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:51,735 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:51] "[37mOPTIONS /updateID/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:52,038 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:52] "[37mOPTIONS /update/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:52,238 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:52] "[37mPOST /updateID/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:52,479 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:52] "[37mPOST /update/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-16 10:56:52,980 - 10296 INFO - 127.0.0.1 - - [16/Sep/2020 10:56:52] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -

@@ -1,0 +1,50 @@
+2020-09-15 20:54:50,851 - 15780 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(10),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.12s dimension_payment_details Table CREATED
+2020-09-15 20:54:51,012 - 15780 INFO - dimension_payment_details UPDATED
+2020-09-15 20:54:51,203 - 15780 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(10),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.08s dimension_payment_details Table CREATED
+2020-09-15 20:54:51,320 - 15780 INFO - dimension_payment_details UPDATED
+2020-09-15 20:54:51,741 - 15780 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(10),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.19s dimension_payment_details Table CREATED
+2020-09-15 20:54:51,885 - 15780 INFO - dimension_payment_details UPDATED
+2020-09-15 20:54:52,072 - 15780 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(10),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.08s dimension_payment_details Table CREATED
+2020-09-15 20:54:52,184 - 15780 INFO - dimension_payment_details UPDATED
+2020-09-15 20:54:52,305 - 15780 INFO - dimension_payment_details Records Inserted
+2020-09-15 20:54:52,305 - 15780 INFO - dimension_payment_details Records Inserted
+2020-09-15 20:54:52,358 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:54:52] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 20:54:52,358 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:54:52] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 20:54:55,887 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:54:55] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 20:54:55,887 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:54:55] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 20:55:01,332 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:01] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 20:55:01,332 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:01] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 20:55:11,447 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:11] "[33mGET /coverage HTTP/1.1[0m" 404 -
+2020-09-15 20:55:11,447 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:11] "[33mGET /coverage HTTP/1.1[0m" 404 -
+2020-09-15 20:55:11,451 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:11] "[37mGET /paths HTTP/1.1[0m" 200 -
+2020-09-15 20:55:11,451 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:11] "[37mGET /paths HTTP/1.1[0m" 200 -
+2020-09-15 20:55:39,859 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:39] "[37mOPTIONS /imgpath HTTP/1.1[0m" 200 -
+2020-09-15 20:55:39,859 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:39] "[37mOPTIONS /imgpath HTTP/1.1[0m" 200 -
+2020-09-15 20:55:39,965 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:39] "[37mPOST /imgpath HTTP/1.1[0m" 200 -
+2020-09-15 20:55:39,965 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:39] "[37mPOST /imgpath HTTP/1.1[0m" 200 -
+2020-09-15 20:55:41,825 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:41] "[37mGET /imgpath HTTP/1.1[0m" 200 -
+2020-09-15 20:55:41,825 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:55:41] "[37mGET /imgpath HTTP/1.1[0m" 200 -

@@ -1,0 +1,310 @@
+.drag
+{
+  position:absolute;
+  top:50px;
+  right:350px;
+}
+
+.example-container 
+{ 
+  margin-left: 70px;
+  margin-top: 5px;
+  width: 140px;
+  height: 200px;
+  float: left;
+}
+.dropdown
+{
+  margin-top: 65px;
+  /* top: 5px;   */
+  margin-left: 30px;
+  width: 70%;
+  position: relative;
+}
+
+select
+ {
+  margin-top: 10px;
+  padding: 7px 7px;
+  border: 1px solid rgb(8, 8, 8);
+  font-size: 12px;
+  border-radius: 4px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  width: 190px;
+  margin-left: 40px;
+  /* position: relative; */
+  }
+
+.example-container1
+ {
+  margin-left: 230px;
+  height: 200px;
+  width: 200px;
+  /* background-color: ; */
+}
+
+.example-container3
+ {
+  top: 100px;
+  margin-left: 730px;
+  width: 100px;
+  height: 27px;
+  position: absolute;
+}
+
+.example-container4
+ {
+  top: 100px;
+  margin-left: 900px;
+  height: 300px;
+  position: absolute;
+}
+
+.example-container5
+ {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin-left: 100px;
+  height: 0px;
+  top: 20px;
+  width: 200px;
+}
+.example-container6
+ {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  top: 20px;
+  margin-left: 400px;
+  height: 300px;
+  width: 200px;
+}
+.example-container7
+ {
+  top: -270px;
+  margin-left: 750px;
+  position: relative;
+  width: 10%;
+}
+.example-list {
+  width: 150px;
+  border: solid 1px #ccc;
+  min-height: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.example-list-groupby {
+  width: 150px;
+  border: solid 1px #ccc;
+  min-height: 30px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.example-list-groupdone {
+  width: 300px;
+  top: 250px;
+  min-height: 100px;
+  border: solid 1px #ccc;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.example-list-select1 {
+  width: 210px;
+  border: solid 1px #ccc;
+  min-height: 30px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.example-list-select2 {
+  width: 210px;
+  border: solid 1px #ccc;
+  min-height: 30px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.example-list-select3 {
+  width: 210px;
+  border: solid 1px #ccc;
+  min-height: 30px;
+  border-radius: 4px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.example-list-column {
+  width: 180px;
+  border: solid 1px #ccc;
+  min-height: 30px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.example-list-done {
+  margin-left: 50px;
+  margin-top: 50px;
+  border: solid 1px #ccc;
+  min-height: 100px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+  width: 400px;
+}
+.example-list-coljoin {
+  /* margin-left: 50px;
+  margin-top: 50px; */
+  border: solid 1px #ccc;
+  min-height: 100px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+  width: 350px;
+}
+.example-box {
+  width: 140px;
+  padding: 6px 6px;
+  border-radius: 20px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  cursor: move;
+  background: white;
+  font-size: 12px;
+}
+.example-box-groupby {
+  width: 150px;
+  padding: 6px 6px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  cursor: move;
+  background: white;
+  font-size: 10px;
+}
+.example-box-groupdone{
+  width: 150px;
+  padding: 6px 6px;
+  /* border: solid 1px #ccc; */
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  cursor: move;
+  background: white;
+  font-size: 12px;
+}
+.example-box-column{
+  width: 180px;
+  padding: 6px 6px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  cursor: move;
+  background: white;
+  font-size: 12px;
+}
+.example-box-select1{
+  width: 200px;
+  padding: 6px 6px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  cursor: move;
+  background: white;
+  font-size: 12px;
+}
+.example-form{
+  margin-top: 0px;
+  margin-left: 900px;
+}
+.example-box-select2{
+  width: 200px;
+  padding: 6px 6px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  cursor: move;
+  background: white;
+  font-size: 12px;
+}
+.example-box-select3{
+  width: 200px;
+  padding: 6px 6px;
+  /* border-bottom: solid 1px #ccc; */
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  cursor: move;
+  background: white;
+  font-size: 12px;
+}
+.example-box-todo {
+  padding: 10px;
+  border-bottom: solid 1px #ccc;
+  border-radius: 20px;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+  cursor: move;
+  background:rgb(250, 252, 250);
+  font-size: 12px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

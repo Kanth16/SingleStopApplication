@@ -1,0 +1,16 @@
+2020-09-10 20:46:07,438 - 18268 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY? CHAR(5)
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.0s dimension_payment_details Table CREATED
+2020-09-10 20:46:07,620 - 18268 INFO - dimension_payment_details UPDATED
+2020-09-10 20:46:07,690 - 18268 INFO - dimension_payment_details Records Inserted
+2020-09-10 20:46:07,690 - 18268 INFO - dimension_payment_details Records Inserted
+2020-09-10 20:46:07,694 - 18268 INFO - 127.0.0.1 - - [10/Sep/2020 20:46:07] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-10 20:46:07,694 - 18268 INFO - 127.0.0.1 - - [10/Sep/2020 20:46:07] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-10 20:46:09,426 - 18268 INFO - 127.0.0.1 - - [10/Sep/2020 20:46:09] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-10 20:46:09,426 - 18268 INFO - 127.0.0.1 - - [10/Sep/2020 20:46:09] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-10 20:46:25,637 - 18268 INFO - 127.0.0.1 - - [10/Sep/2020 20:46:25] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-09-10 20:46:25,637 - 18268 INFO - 127.0.0.1 - - [10/Sep/2020 20:46:25] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -

@@ -1,0 +1,5 @@
+123, "L", "LAB EXAM", "Y", curdate(), "9999-12-31"
+456, "I", "INTERNAL EXAM", "Y", curdate(), "9999-12-31"
+789, "S", "SEMESTER", "Y", curdate(), "9999-12-31"
+345, "M", "MOCK SEMESTER", "Y", curdate(), "9999-12-31"
+12, "LI", "INERNAL LAB", "Y", curdate(), "9999-12-31"

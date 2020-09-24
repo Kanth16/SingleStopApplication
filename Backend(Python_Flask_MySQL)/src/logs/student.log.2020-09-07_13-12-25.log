@@ -1,0 +1,94 @@
+2020-09-07 13:11:33,835 - 15280 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+                     VAL INT,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.3s fact_academics Table CREATED
+2020-09-07 13:11:34,127 - 15280 INFO - fact_academics UPDATED
+2020-09-07 13:11:34,621 - 15280 INFO - fact_academics Records Inserted
+2020-09-07 13:11:34,621 - 15280 INFO - fact_academics Records Inserted
+2020-09-07 13:11:34,628 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:11:34] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 13:11:34,628 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:11:34] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 13:11:37,184 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:11:37] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 13:11:37,184 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:11:37] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 13:11:40,746 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:11:40] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 13:11:40,746 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:11:40] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 13:12:24,970 - 15280 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+                     VAL INT,
+                     VALU CHAR(5),
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.26s fact_academics Table CREATED
+2020-09-07 13:12:24,970 - 15280 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+                     VAL INT,
+                     VALU CHAR(5),
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.26s fact_academics Table CREATED
+2020-09-07 13:12:24,970 - 15280 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+                     VAL INT,
+                     VALU CHAR(5),
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.26s fact_academics Table CREATED
+2020-09-07 13:12:25,069 - 15280 INFO - fact_academics UPDATED
+2020-09-07 13:12:25,069 - 15280 INFO - fact_academics UPDATED
+2020-09-07 13:12:25,069 - 15280 INFO - fact_academics UPDATED
+2020-09-07 13:12:25,412 - 15280 INFO - fact_academics Records Inserted
+2020-09-07 13:12:25,412 - 15280 INFO - fact_academics Records Inserted
+2020-09-07 13:12:25,412 - 15280 INFO - fact_academics Records Inserted
+2020-09-07 13:12:25,412 - 15280 INFO - fact_academics Records Inserted
+2020-09-07 13:12:25,423 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:25] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 13:12:25,423 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:25] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 13:12:25,423 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:25] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 13:12:25,423 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:25] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 13:12:27,100 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:27] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 13:12:27,100 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:27] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 13:12:27,100 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:27] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 13:12:27,100 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:27] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 13:12:32,058 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:32] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 13:12:32,058 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:32] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 13:12:32,058 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:32] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 13:12:32,058 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:12:32] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 13:13:02,104 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:13:02] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 13:13:02,240 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:13:02] "[37mGET /select/undefined HTTP/1.1[0m" 200 -
+2020-09-07 13:13:06,936 - 15280 INFO - 127.0.0.1 - - [07/Sep/2020 13:13:06] "[37mGET /tables HTTP/1.1[0m" 200 -

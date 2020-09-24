@@ -1,0 +1,4 @@
+2020-09-10 16:25:41,062 - 5304 INFO - dimension_placement_details Records Inserted
+2020-09-10 16:25:41,734 - 5304 INFO - 127.0.0.1 - - [10/Sep/2020 16:25:41] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-10 16:25:44,222 - 5304 INFO - 127.0.0.1 - - [10/Sep/2020 16:25:44] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-10 16:25:50,562 - 5304 INFO - 127.0.0.1 - - [10/Sep/2020 16:25:50] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -

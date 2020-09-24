@@ -1,0 +1,11 @@
+create table if not exists details_main(STUDENT_ID BIGINT PRIMARY KEY NOT NULL,
+                     NAME     VARCHAR(45)   NOT NULL,
+                     DOB       DATE       NOT NULL,
+                     GENDER    VARCHAR(10),
+                     GUARDIAN_NAME  VARCHAR(45),
+                     ADDRESS    VARCHAR(50),
+                     PHONE_NO   BIGINT,
+                     DOJ    DATE,
+                     ACTIVE_FLAG CHAR(1),
+                     STUDENT_START_DATE DATE,
+                     STUDENT_END_DATE   DATE);

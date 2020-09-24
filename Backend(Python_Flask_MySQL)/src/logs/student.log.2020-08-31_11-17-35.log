@@ -1,0 +1,17 @@
+2020-08-31 11:17:05,621 - 16952 INFO -  * Detected change in 'C:\\Users\\umapriya.krishnan\\Desktop\\angular\\studentProject\\backend\\src\\main\\app.py', reloading
+2020-08-31 11:17:31,589 - 14428 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.03s fact_academics Table CREATED
+2020-08-31 11:17:31,596 - 14428 INFO - 127.0.0.1 - - [31/Aug/2020 11:17:31] "[37mPOST /creation HTTP/1.1[0m" 200 -
+2020-08-31 11:17:35,415 - 14428 INFO - 127.0.0.1 - - [31/Aug/2020 11:17:35] "[37mGET /tables HTTP/1.1[0m" 200 -

@@ -1,0 +1,33 @@
+2020-09-15 20:51:52,140 - 15780 INFO - dimension_department_details Records Inserted
+2020-09-15 20:51:52,168 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:51:52] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 20:51:56,384 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:51:56] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 20:52:02,909 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:52:02] "[37mGET /select/dimension_department_details HTTP/1.1[0m" 200 -
+2020-09-15 20:52:36,787 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:52:36] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 20:52:48,013 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:52:48] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 20:53:17,307 - 15780 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID) ON DELETE CASCADE ON UPDATE CASCADE) fact_academics.sql 0.27s fact_academics Table CREATED
+2020-09-15 20:53:17,340 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:17] "[37mPOST /creation HTTP/1.1[0m" 200 -
+2020-09-15 20:53:20,060 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:20] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 20:53:42,003 - 15780 INFO - fact_academics Records Inserted
+2020-09-15 20:53:42,003 - 15780 INFO - fact_academics Records Inserted
+2020-09-15 20:53:42,003 - 15780 INFO - fact_academics Records Inserted
+2020-09-15 20:53:42,089 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:42] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 20:53:42,089 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:42] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 20:53:42,089 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:42] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 20:53:44,914 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:44] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 20:53:44,914 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:44] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 20:53:44,914 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:44] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 20:53:49,693 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:49] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-15 20:53:49,693 - 15780 INFO - 127.0.0.1 - - [15/Sep/2020 20:53:49] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -

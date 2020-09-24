@@ -1,0 +1,7 @@
+"S", "VERY GOOD", "Y", curdate(), "9999-12-31"
+"A", "GOOD", "Y", curdate(), "9999-12-31"
+"B", "ABOVE AVERAGE", "Y", curdate(), "9999-12-31"
+"C", "AVERAGE", "Y", curdate(), "9999-12-31"
+"D", "BELOW AVERAGE", "Y", curdate(), "9999-12-31"
+"E", "PASS", "Y", curdate(), "9999-12-31"
+"F", "FAIL", "Y", curdate(), "9999-12-31"

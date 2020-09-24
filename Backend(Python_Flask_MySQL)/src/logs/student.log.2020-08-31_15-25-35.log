@@ -1,0 +1,11 @@
+2020-08-31 15:25:34,497 - 8812 INFO - dimension_placement_details Records Inserted
+2020-08-31 15:25:35,469 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:25:35] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-08-31 15:25:39,110 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:25:39] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-08-31 15:25:43,769 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:25:43] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-08-31 15:25:51,124 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:25:51] "[37mOPTIONS /s_delete/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-08-31 15:25:52,624 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:25:52] "[37mPOST /s_delete/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-08-31 15:25:53,002 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:25:53] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-08-31 15:26:18,816 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:26:18] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-08-31 15:26:26,039 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:26:26] "[37mOPTIONS /update/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-08-31 15:26:27,076 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:26:27] "[37mPOST /update/dimension_placement_details HTTP/1.1[0m" 200 -
+2020-08-31 15:26:28,166 - 8812 INFO - 127.0.0.1 - - [31/Aug/2020 15:26:28] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -

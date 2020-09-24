@@ -1,0 +1,4 @@
+2020-08-31 17:20:20,059 - 20652 INFO - dimension_placement_details Records Inserted
+2020-08-31 17:20:20,123 - 20652 INFO - 127.0.0.1 - - [31/Aug/2020 17:20:20] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-08-31 17:20:23,220 - 20652 INFO - 127.0.0.1 - - [31/Aug/2020 17:20:23] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-08-31 17:20:27,842 - 20652 INFO - 127.0.0.1 - - [31/Aug/2020 17:20:27] "[37mGET /select/dimension_placement_details HTTP/1.1[0m" 200 -

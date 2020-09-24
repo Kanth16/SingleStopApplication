@@ -1,0 +1,32 @@
+2020-09-15 16:50:42,155 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.16s dimension_payment_details Table CREATED
+2020-09-15 16:50:42,703 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:50:43,265 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.11s dimension_payment_details Table CREATED
+2020-09-15 16:50:43,759 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:50:44,430 - 13132 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        MANDATORY CHAR(5),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.08s dimension_payment_details Table CREATED
+2020-09-15 16:50:44,938 - 13132 INFO - dimension_payment_details UPDATED
+2020-09-15 16:50:45,474 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:50:45,474 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:50:45,829 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:50:45] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:50:45,829 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:50:45] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:50:48,560 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:50:48] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:50:48,560 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:50:48] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:50:54,019 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:50:54] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:50:54,019 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:50:54] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -

@@ -1,0 +1,3 @@
+2020-09-01 11:53:40,143 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:53:40] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-01 11:53:45,320 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:53:45] "[37mGET /collist/dimension_grade_details HTTP/1.1[0m" 200 -
+2020-09-01 11:53:47,982 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:53:47] "[37mGET /collist/dimension_payment_details HTTP/1.1[0m" 200 -

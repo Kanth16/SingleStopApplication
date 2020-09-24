@@ -1,0 +1,64 @@
+<section>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <div class="example-button-row">
+        <button mat-raised-button style='margin-right:16px; margin-left: 850px;background-color: rgb(11,11,148);color:white;font-family: Trebuchet MS, Helvetica, sans-serif;' class="btn" (click)="updateRow()"><i class="fa fa-edit"></i>UPDATE</button>
+        <button mat-raised-button  style='margin-right:16px;background-color:rgb(11,11,148);color:white;font-family: Trebuchet MS, Helvetica, sans-serif;' class="btn" (click)="delete()"><i class="fa fa-trash"></i> DELETE</button>
+        <!-- <button mat-stroked-button color = "primary" style='margin-right:16px;' class="btn" (click) ="reset()"><i class="fa fa-refresh"></i></button>  -->
+    </div>
+    </section>
+<link rel="stylesheet"
+      href="https://unpkg.com/@ag-grid-community/all-modules@23.0.0/dist/styles/ag-grid.css">
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@ag-grid-community/all-modules@23.0.0/dist/styles/ag-theme-alpine.css">
+      <br>
+      <div *ngIf = "errorMsg" class="alert alert-danger" role="alert">
+            Invalid Entry!!
+            <br>
+            Please enter a valid data of datatype: {{this.errorDisplay}}
+      </div>
+      <div *ngIf = "updateEmpty" class="alert alert-info" role="alert">
+            No rows has been edited.
+            <br>
+            Please edit any row to update the table.
+      </div>
+      <!-- <div *ngIf = "updateMsg" class="alert alert-success" role="alert">
+            Row/ Rows with {{this.keys[0]}}:  {{this.updateValue}} has been updated successfully.
+      </div> -->
+      <div *ngIf = "delEmpty" class="alert alert-info" role="alert">
+            No rows has been selected.
+            <br>
+            Please select any row to perform deletion.
+      </div>
+      <!-- <div *ngIf = "delMsg" class="alert alert-success" role="alert">
+            Row/ Rows with  {{this.keys[0]}}:  {{this.delValue}} has been deleted successfully.
+      </div> -->
+<br>
+<ag-grid-angular
+    #agGrid
+    style="width: 1050px; height: 550px;margin-left: 50px;"
+    class="ag-theme-alpine"
+    [rowData]="dataa"
+    [columnDefs]="column"
+    [defaultColDef]="defaultColDef"
+    [gridOptions]="gridOptions"
+    [pagination]="true"
+    [groupSelectsChildren]="true"
+    [suppressRowClickSelection]="true"
+    (rowEditingStopped)="editedRow($event)"
+    rowSelection="multiple"
+    rowMultiSelectWithClick = "true"
+    (rowSelected)="onRowSelected($event)"
+    (gridReady)="onGridReady($event)">
+</ag-grid-angular>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<br>
+<!-- <button style='margin-right:16px;margin-left: 20px;' class="btn" (click)="updateRow()"><i class="fa fa-edit"></i>UPDATE</button>
+<button  style='margin-right:16px;' class="btn" (click)="delete()"><i class="fa fa-trash"></i> DELETE</button> -->
+<div *ngIf = "clickEvent">
+      <!-- <button style='margin-right:16px; margin-left: 70px;background-color:rgb(11,11,148);' (click) = "save()"><i class="fa fa-edit"></i></button>
+      <button style='margin-right:16px;background-color:rgb(11,11,148);' (click) = "cancel()"><i class="fa fa-close"></i></button> -->
+      </div>
+<br>

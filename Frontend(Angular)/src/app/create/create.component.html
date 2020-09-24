@@ -1,0 +1,11 @@
+<div style= "margin-left:60px">
+    <p style="font-family: Trebuchet MS, Helvetica, sans-serif;font-size:16px;">Choose a .sql file to upload</p>
+    <input style="font-family: Trebuchet MS, Helvetica, sans-serif;" type="file" (change)="handle($event)">
+    <br>
+    <br>
+    
+    <button   mat-raised-button (click)="sqlupload()" >UPLOAD</button>
+    <br>
+    <br>
+    <button  mat-raised-button color ="warm" (click)="route()">Back</button>
+    

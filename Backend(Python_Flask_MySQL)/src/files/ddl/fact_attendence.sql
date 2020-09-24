@@ -1,0 +1,12 @@
+create table if not exists fact_attendence(STUDENT_ID BIGINT NOT NULL,
+                     TIME_ID    INT,
+                     CURDATE    DATE,
+                     COURSE_ID  VARCHAR(9),
+                     STAFF_ID   VARCHAR(9),
+                     ATTENDENCE VARCHAR(5),
+                     ACTIVE_FLAG CHAR(1),
+                     ATTENDENCE_START_DATE DATETIME,
+                     ATTENDENCE_END_DATE   DATETIME,
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+					 FOREIGN KEY(STUDENT_ID) REFERENCES details_main (STUDENT_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+					 FOREIGN KEY(STAFF_ID) REFERENCES dimension_staff_details(STAFF_ID) ON DELETE CASCADE ON UPDATE CASCADE);

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        </head>
+<body>  
+ <nav role="navigation">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="w3-padding w3-xlarge">
+  <a (click)="adv()">
+    <button style='position:absolute;color:white; top: 20px; right:20px;' class="btn"><i class="fa fa-search"></i></button>
+  </a>
+  <a href="#">
+    <button style='position:absolute;color:white; top: 15px; right:70px;' class="btn"><i class="fa fa-home"></i></button>
+  </a>
+  </div>
+  <div id="menuToggle">
+    <input type="checkbox" />
+    <span class = "first"></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+      <a [routerLink]="['select', tablename]" ><li>SELECT</li></a>
+      <a  routerLink ="/test"><li>TEST</li></a>
+      <a routerLink ="/files"><li>UPLOAD</li></a>  
+      <a (click) = "lint()"><li>LINTER</li></a>
+    </ul> 
+</div>
+</nav> 
+<h3 class = "title" >SINGLESTOP APPLICATION</h3>
+<mat-card>
+<form *ngIf = "value" class="inputs" action= '#' method="POST">     
+  <div class = "mainselection">
+    <label style="font-family: Trebuchet MS, Helvetica, sans-serif;margin-left:20px;padding: 10px 10px; font-weight: bold;margin-top: 30px;">SCHEMA NAME</label>
+    <select >
+        <option selected="selected">--None--</option>
+        <option> Student </option>
+    </select>
+<br>
+<br>
+    <label style="font-family: Trebuchet MS, Helvetica, sans-serif;margin-left:20px;padding:10px 10px; font-weight: bold;">TABLE NAME</label>
+           <select style = "margin-left: 33px;" id="tname" name="tabname" [(ngModel)] = "tablename">
+               <option selected="selected">--None--</option>
+               <option *ngFor = "let table of tableData">{{table.Tables_in_student}}</option>
+           </select> 
+<br>
+<br>
+<section>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="example-button-row">
+    <a mat-raised-button  style="margin-left: 270px;font-family: Trebuchet MS, Helvetica, sans-serif;" [routerLink]="['select', tablename]">SUBMIT</a>
+    <button mat-raised-button style='margin-right:16px;' class="btn" onclick="reset()"><i class="fa fa-refresh"></i></button> 
+  </div>
+</section>
+   </div>
+</form>
+<br>
+
+<router-outlet></router-outlet>
+</mat-card>
+</body>
+</html>
+

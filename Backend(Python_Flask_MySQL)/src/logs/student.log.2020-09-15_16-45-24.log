@@ -1,0 +1,7 @@
+2020-09-15 16:45:23,982 - 13132 INFO - dimension_payment_details Records Inserted
+2020-09-15 16:45:24,082 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:45:24] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-15 16:45:26,903 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:45:26] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:45:29,600 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:45:29] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:46:11,170 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:46:11] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 16:46:14,856 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:46:14] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-15 16:46:15,236 - 13132 INFO - 127.0.0.1 - - [15/Sep/2020 16:46:15] "[37mGET /select/undefined HTTP/1.1[0m" 200 -

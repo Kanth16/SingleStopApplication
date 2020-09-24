@@ -1,0 +1,48 @@
+2020-09-07 16:44:47,320 - 29412 INFO - create table if not exists fact_payment(STUDENT_ID BIGINT NOT NULL,
+                     FEE_ID    VARCHAR(10)   NOT NULL,
+                     PAYMENT_ID VARCHAR(9),
+                     NEW_COL INT,
+                     ACTIVE_FLAG CHAR(1),
+                     PAYMENT_FACT_START_DATE DATETIME,
+                     PAYMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(FEE_ID) REFERENCES dimension_payment_details(FEE_ID)) fact_payment.sql 0.19s fact_payment Table CREATED
+2020-09-07 16:44:47,629 - 29412 INFO - fact_payment UPDATED
+2020-09-07 16:44:48,087 - 29412 INFO - create table if not exists fact_payment(STUDENT_ID BIGINT NOT NULL,
+                     FEE_ID    VARCHAR(10)   NOT NULL,
+                     PAYMENT_ID VARCHAR(9),
+                     NEW_COL INT,
+                     ACTIVE_FLAG CHAR(1),
+                     PAYMENT_FACT_START_DATE DATETIME,
+                     PAYMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(FEE_ID) REFERENCES dimension_payment_details(FEE_ID)) fact_payment.sql 0.19s fact_payment Table CREATED
+2020-09-07 16:44:48,315 - 29412 INFO - fact_payment UPDATED
+2020-09-07 16:44:48,656 - 29412 INFO - create table if not exists fact_payment(STUDENT_ID BIGINT NOT NULL,
+                     FEE_ID    VARCHAR(10)   NOT NULL,
+                     PAYMENT_ID VARCHAR(9),
+                     NEW_COL INT,
+                     ACTIVE_FLAG CHAR(1),
+                     PAYMENT_FACT_START_DATE DATETIME,
+                     PAYMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(FEE_ID) REFERENCES dimension_payment_details(FEE_ID)) fact_payment.sql 0.13s fact_payment Table CREATED
+2020-09-07 16:44:49,048 - 29412 INFO - fact_payment UPDATED
+2020-09-07 16:44:49,438 - 29412 INFO - create table if not exists fact_payment(STUDENT_ID BIGINT NOT NULL,
+                     FEE_ID    VARCHAR(10)   NOT NULL,
+                     PAYMENT_ID VARCHAR(9),
+                     NEW_COL INT,
+                     ACTIVE_FLAG CHAR(1),
+                     PAYMENT_FACT_START_DATE DATETIME,
+                     PAYMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(FEE_ID) REFERENCES dimension_payment_details(FEE_ID)) fact_payment.sql 0.17s fact_payment Table CREATED
+2020-09-07 16:44:49,667 - 29412 INFO - fact_payment UPDATED
+2020-09-07 16:44:50,076 - 29412 INFO - fact_payment Records Inserted
+2020-09-07 16:44:50,076 - 29412 INFO - fact_payment Records Inserted
+2020-09-07 16:44:50,236 - 29412 INFO - 127.0.0.1 - - [07/Sep/2020 16:44:50] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 16:44:50,236 - 29412 INFO - 127.0.0.1 - - [07/Sep/2020 16:44:50] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 16:44:53,474 - 29412 INFO - 127.0.0.1 - - [07/Sep/2020 16:44:53] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 16:44:53,474 - 29412 INFO - 127.0.0.1 - - [07/Sep/2020 16:44:53] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 16:44:59,671 - 29412 INFO - 127.0.0.1 - - [07/Sep/2020 16:44:59] "[37mGET /select/fact_payment HTTP/1.1[0m" 200 -
+2020-09-07 16:44:59,671 - 29412 INFO - 127.0.0.1 - - [07/Sep/2020 16:44:59] "[37mGET /select/fact_payment HTTP/1.1[0m" 200 -

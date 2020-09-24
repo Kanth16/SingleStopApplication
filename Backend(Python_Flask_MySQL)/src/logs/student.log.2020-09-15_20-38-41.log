@@ -1,0 +1,4 @@
+2020-09-15 20:38:41,037 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:38:41] "[37mOPTIONS /update/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 20:38:41,308 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:38:41] "[37mPOST /update/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 20:38:41,714 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:38:41] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 20:38:47,506 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:38:47] "[37mGET /tables HTTP/1.1[0m" 200 -

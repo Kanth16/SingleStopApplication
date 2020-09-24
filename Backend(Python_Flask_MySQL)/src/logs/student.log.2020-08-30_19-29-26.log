@@ -1,0 +1,759 @@
+2020-08-30 19:26:33,455 - 7980 INFO - create table if not exists details_main(STUDENT_ID BIGINT PRIMARY KEY NOT NULL,
+                     NAME     VARCHAR(45)   NOT NULL,
+                     DOB       DATE       NOT NULL,
+                     GENDER    VARCHAR(10),
+                     GUARDIAN_NAME  VARCHAR(45),
+                     ADDRESS    VARCHAR(50),
+                     PHONE_NO   BIGINT,
+                     DOJ    DATE,
+                     ACTIVE_FLAG CHAR(1),
+                     STUDENT_START_DATE DATE,
+                     STUDENT_END_DATE   DATE) details_main.sql 0.12s details_main Table CREATED
+2020-08-30 19:26:33,677 - 7980 INFO - create table if not exists dimension_calender_details(TIME_ID VARCHAR(5) PRIMARY KEY,
+                        HOLIDAY DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        HOLIDAY_START_DATE DATETIME,
+                        HOLIDAY_END_DATE  DATETIME) dimension_calender_details.sql 0.22s dimension_calender_details Table CREATED
+2020-08-30 19:26:33,779 - 7980 INFO - create table if not exists dimension_course_details(COURSE_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        COURSE_NAME VARCHAR(20),
+                        ACTIVE_FLAG CHAR(1),
+                        COURSE_START_DATE DATETIME,
+                        COURSE_END_DATE   DATETIME) dimension_course_details.sql 0.1s dimension_course_details Table CREATED
+2020-08-30 19:26:33,866 - 7980 INFO - create table if not exists dimension_degree_details(DEGREE_ID BIGINT NOT NULL PRIMARY KEY,
+                        DEGREE_TYPE   VARCHAR(5),
+                        DURATION   INT,
+                        ACTIVE_FLAG CHAR(1),
+                        DEGREE_START_DATE DATETIME,
+                        DEGREE_END_DATE   DATETIME) dimension_degree_details.sql 0.09s dimension_degree_details Table CREATED
+2020-08-30 19:26:34,013 - 7980 INFO - create table if not exists dimension_department_details(DEP_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        DEP_NAME VARCHAR(50),
+                        ACTIVE_FLAG CHAR(1),
+                        DEP_START_DATE DATETIME,
+                        DEP_END_DATE   DATETIME) dimension_department_details.sql 0.15s dimension_department_details Table CREATED
+2020-08-30 19:26:34,111 - 7980 INFO - create table if not exists dimension_exam_details(EXAM_ID INT NOT NULL PRIMARY KEY,
+                        EXAM_TYPE   VARCHAR(3),
+                        EXAM_DESCRIPTION    VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        EXAM_START_DATE DATETIME,
+                        EXAM_END_DATE   DATETIME) dimension_exam_details.sql 0.1s dimension_exam_details Table CREATED
+2020-08-30 19:26:34,205 - 7980 INFO - create table if not exists dimension_grade_details(GRADE_ID CHAR(2) NOT NULL PRIMARY KEY,
+                        GRADE_DESCRIPTION    CHAR(20),
+                        ACTIVE_FLAG CHAR(1),
+                        GRADE_START_DATE DATETIME,
+                        GRADE_END_DATE   DATETIME) dimension_grade_details.sql 0.09s dimension_grade_details Table CREATED
+2020-08-30 19:26:34,314 - 7980 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.11s dimension_payment_details Table CREATED
+2020-08-30 19:26:34,426 - 7980 INFO - create table if not exists dimension_placement_details(COMPANY_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        COMPANY_NAME    VARCHAR(15),
+                        PLACEMENT_VENUE VARCHAR(50),
+                        PLACEMENT_DATE  DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        PLACEMENT_START_DATE DATETIME,
+                        PLACEMENT_END_DATE   DATETIME) dimension_placement_details.sql 0.11s dimension_placement_details Table CREATED
+2020-08-30 19:26:34,523 - 7980 INFO - create table if not exists dimension_staff_details(STAFF_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        STAFF_NAME VARCHAR(25),
+                        STAFF_DOJ   DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        STAFF_START_DATE DATETIME,
+                        STAFF_END_DATE   DATETIME) dimension_staff_details.sql 0.1s dimension_staff_details Table CREATED
+2020-08-30 19:26:34,830 - 7980 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.31s fact_academics Table CREATED
+2020-08-30 19:26:35,042 - 7980 INFO - create table if not exists fact_attendence(STUDENT_ID BIGINT NOT NULL,
+                     TIME_ID    INT,
+                     CURDATE    DATE,
+                     COURSE_ID  VARCHAR(9),
+                     STAFF_ID   VARCHAR(9),
+                     ATTENDENCE VARCHAR(5),
+                     ACTIVE_FLAG CHAR(1),
+                     ATTENDENCE_START_DATE DATETIME,
+                     ATTENDENCE_END_DATE   DATETIME,
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(STAFF_ID) REFERENCES dimension_staff_details(STAFF_ID)) fact_attendence.sql 0.21s fact_attendence Table CREATED
+2020-08-30 19:26:35,169 - 7980 INFO - create table if not exists fact_payment(STUDENT_ID BIGINT NOT NULL,
+                     FEE_ID    VARCHAR(10)   NOT NULL,
+                     PAYMENT_ID VARCHAR(9),
+                     ACTIVE_FLAG CHAR(1),
+                     PAYMENT_FACT_START_DATE DATETIME,
+                     PAYMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(FEE_ID) REFERENCES dimension_payment_details(FEE_ID)) fact_payment.sql 0.13s fact_payment Table CREATED
+2020-08-30 19:26:35,346 - 7980 INFO - create table if not exists fact_placement(STUDENT_ID BIGINT NOT NULL,
+                     DEP_ID    VARCHAR(9),
+                     COMPANY_ID VARCHAR(9),
+                     HIRED  VARCHAR(5),
+                     ACTIVE_FLAG CHAR(1),
+                     PLACEMENT_FACT_START_DATE DATETIME,
+                     PLACEMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY(STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEP_ID) REFERENCES dimension_department_details(DEP_ID),
+					 FOREIGN KEY(COMPANY_ID) REFERENCES dimension_placement_details(COMPANY_ID)) fact_placement.sql 0.18s fact_placement Table CREATED
+2020-08-30 19:26:35,508 - 7980 INFO - create table if not exists fact_student(STUDENT_ID BIGINT NOT NULL,
+                     DEP_ID    VARCHAR(9)   NOT NULL,
+                     COURSE_ID VARCHAR(9),
+                     STAFF_ID   VARCHAR(9),
+                     ACTIVE_FLAG CHAR(1),
+                     STUDENT_FACT_START_DATE DATETIME,
+                     STUDENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY(DEP_ID) REFERENCES dimension_department_details(DEP_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main(STUDENT_ID)) fact_student.sql 0.16s fact_student Table CREATED
+2020-08-30 19:26:35,510 - 7980 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/creation_ddl_update.py", line 35, in create_table\n    sqlfile = open(file_path, \'r\')\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\ddl\\\\__init__.sql'\n"]
+2020-08-30 19:27:18,106 - 2736 INFO - create table if not exists details_main(STUDENT_ID BIGINT PRIMARY KEY NOT NULL,
+                     NAME     VARCHAR(45)   NOT NULL,
+                     DOB       DATE       NOT NULL,
+                     GENDER    VARCHAR(10),
+                     GUARDIAN_NAME  VARCHAR(45),
+                     ADDRESS    VARCHAR(50),
+                     PHONE_NO   BIGINT,
+                     DOJ    DATE,
+                     ACTIVE_FLAG CHAR(1),
+                     STUDENT_START_DATE DATE,
+                     STUDENT_END_DATE   DATE) details_main.sql 0.04s details_main Table CREATED
+2020-08-30 19:27:18,114 - 2736 INFO - create table if not exists dimension_calender_details(TIME_ID VARCHAR(5) PRIMARY KEY,
+                        HOLIDAY DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        HOLIDAY_START_DATE DATETIME,
+                        HOLIDAY_END_DATE  DATETIME) dimension_calender_details.sql 0.01s dimension_calender_details Table CREATED
+2020-08-30 19:27:18,122 - 2736 INFO - create table if not exists dimension_course_details(COURSE_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        COURSE_NAME VARCHAR(20),
+                        ACTIVE_FLAG CHAR(1),
+                        COURSE_START_DATE DATETIME,
+                        COURSE_END_DATE   DATETIME) dimension_course_details.sql 0.01s dimension_course_details Table CREATED
+2020-08-30 19:27:18,130 - 2736 INFO - create table if not exists dimension_degree_details(DEGREE_ID BIGINT NOT NULL PRIMARY KEY,
+                        DEGREE_TYPE   VARCHAR(5),
+                        DURATION   INT,
+                        ACTIVE_FLAG CHAR(1),
+                        DEGREE_START_DATE DATETIME,
+                        DEGREE_END_DATE   DATETIME) dimension_degree_details.sql 0.01s dimension_degree_details Table CREATED
+2020-08-30 19:27:18,140 - 2736 INFO - create table if not exists dimension_department_details(DEP_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        DEP_NAME VARCHAR(50),
+                        ACTIVE_FLAG CHAR(1),
+                        DEP_START_DATE DATETIME,
+                        DEP_END_DATE   DATETIME) dimension_department_details.sql 0.01s dimension_department_details Table CREATED
+2020-08-30 19:27:18,151 - 2736 INFO - create table if not exists dimension_exam_details(EXAM_ID INT NOT NULL PRIMARY KEY,
+                        EXAM_TYPE   VARCHAR(3),
+                        EXAM_DESCRIPTION    VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        EXAM_START_DATE DATETIME,
+                        EXAM_END_DATE   DATETIME) dimension_exam_details.sql 0.01s dimension_exam_details Table CREATED
+2020-08-30 19:27:18,163 - 2736 INFO - create table if not exists dimension_grade_details(GRADE_ID CHAR(2) NOT NULL PRIMARY KEY,
+                        GRADE_DESCRIPTION    CHAR(20),
+                        ACTIVE_FLAG CHAR(1),
+                        GRADE_START_DATE DATETIME,
+                        GRADE_END_DATE   DATETIME) dimension_grade_details.sql 0.01s dimension_grade_details Table CREATED
+2020-08-30 19:27:18,176 - 2736 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.01s dimension_payment_details Table CREATED
+2020-08-30 19:27:18,186 - 2736 INFO - create table if not exists dimension_placement_details(COMPANY_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        COMPANY_NAME    VARCHAR(15),
+                        PLACEMENT_VENUE VARCHAR(50),
+                        PLACEMENT_DATE  DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        PLACEMENT_START_DATE DATETIME,
+                        PLACEMENT_END_DATE   DATETIME) dimension_placement_details.sql 0.01s dimension_placement_details Table CREATED
+2020-08-30 19:27:18,194 - 2736 INFO - create table if not exists dimension_staff_details(STAFF_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        STAFF_NAME VARCHAR(25),
+                        STAFF_DOJ   DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        STAFF_START_DATE DATETIME,
+                        STAFF_END_DATE   DATETIME) dimension_staff_details.sql 0.01s dimension_staff_details Table CREATED
+2020-08-30 19:27:18,203 - 2736 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.01s fact_academics Table CREATED
+2020-08-30 19:27:18,211 - 2736 INFO - create table if not exists fact_attendence(STUDENT_ID BIGINT NOT NULL,
+                     TIME_ID    INT,
+                     CURDATE    DATE,
+                     COURSE_ID  VARCHAR(9),
+                     STAFF_ID   VARCHAR(9),
+                     ATTENDENCE VARCHAR(5),
+                     ACTIVE_FLAG CHAR(1),
+                     ATTENDENCE_START_DATE DATETIME,
+                     ATTENDENCE_END_DATE   DATETIME,
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(STAFF_ID) REFERENCES dimension_staff_details(STAFF_ID)) fact_attendence.sql 0.01s fact_attendence Table CREATED
+2020-08-30 19:27:18,220 - 2736 INFO - create table if not exists fact_payment(STUDENT_ID BIGINT NOT NULL,
+                     FEE_ID    VARCHAR(10)   NOT NULL,
+                     PAYMENT_ID VARCHAR(9),
+                     ACTIVE_FLAG CHAR(1),
+                     PAYMENT_FACT_START_DATE DATETIME,
+                     PAYMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(FEE_ID) REFERENCES dimension_payment_details(FEE_ID)) fact_payment.sql 0.01s fact_payment Table CREATED
+2020-08-30 19:27:18,230 - 2736 INFO - create table if not exists fact_placement(STUDENT_ID BIGINT NOT NULL,
+                     DEP_ID    VARCHAR(9),
+                     COMPANY_ID VARCHAR(9),
+                     HIRED  VARCHAR(5),
+                     ACTIVE_FLAG CHAR(1),
+                     PLACEMENT_FACT_START_DATE DATETIME,
+                     PLACEMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY(STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEP_ID) REFERENCES dimension_department_details(DEP_ID),
+					 FOREIGN KEY(COMPANY_ID) REFERENCES dimension_placement_details(COMPANY_ID)) fact_placement.sql 0.01s fact_placement Table CREATED
+2020-08-30 19:27:18,238 - 2736 INFO - create table if not exists fact_student(STUDENT_ID BIGINT NOT NULL,
+                     DEP_ID    VARCHAR(9)   NOT NULL,
+                     COURSE_ID VARCHAR(9),
+                     STAFF_ID   VARCHAR(9),
+                     ACTIVE_FLAG CHAR(1),
+                     STUDENT_FACT_START_DATE DATETIME,
+                     STUDENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY(DEP_ID) REFERENCES dimension_department_details(DEP_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main(STUDENT_ID)) fact_student.sql 0.01s fact_student Table CREATED
+2020-08-30 19:27:18,241 - 2736 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/creation_ddl_update.py", line 35, in create_table\n    sqlfile = open(file_path, \'r\')\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\ddl\\\\__init__.sql'\n"]
+2020-08-30 19:27:33,097 - 14352 INFO - create table if not exists details_main(STUDENT_ID BIGINT PRIMARY KEY NOT NULL,
+                     NAME     VARCHAR(45)   NOT NULL,
+                     DOB       DATE       NOT NULL,
+                     GENDER    VARCHAR(10),
+                     GUARDIAN_NAME  VARCHAR(45),
+                     ADDRESS    VARCHAR(50),
+                     PHONE_NO   BIGINT,
+                     DOJ    DATE,
+                     ACTIVE_FLAG CHAR(1),
+                     STUDENT_START_DATE DATE,
+                     STUDENT_END_DATE   DATE) details_main.sql 0.3s details_main Table CREATED
+2020-08-30 19:27:33,190 - 14352 INFO - create table if not exists dimension_calender_details(TIME_ID VARCHAR(5) PRIMARY KEY,
+                        HOLIDAY DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        HOLIDAY_START_DATE DATETIME,
+                        HOLIDAY_END_DATE  DATETIME) dimension_calender_details.sql 0.09s dimension_calender_details Table CREATED
+2020-08-30 19:27:33,292 - 14352 INFO - create table if not exists dimension_course_details(COURSE_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        COURSE_NAME VARCHAR(20),
+                        ACTIVE_FLAG CHAR(1),
+                        COURSE_START_DATE DATETIME,
+                        COURSE_END_DATE   DATETIME) dimension_course_details.sql 0.1s dimension_course_details Table CREATED
+2020-08-30 19:27:33,380 - 14352 INFO - create table if not exists dimension_degree_details(DEGREE_ID BIGINT NOT NULL PRIMARY KEY,
+                        DEGREE_TYPE   VARCHAR(5),
+                        DURATION   INT,
+                        ACTIVE_FLAG CHAR(1),
+                        DEGREE_START_DATE DATETIME,
+                        DEGREE_END_DATE   DATETIME) dimension_degree_details.sql 0.09s dimension_degree_details Table CREATED
+2020-08-30 19:27:33,453 - 14352 INFO - create table if not exists dimension_department_details(DEP_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        DEP_NAME VARCHAR(50),
+                        ACTIVE_FLAG CHAR(1),
+                        DEP_START_DATE DATETIME,
+                        DEP_END_DATE   DATETIME) dimension_department_details.sql 0.07s dimension_department_details Table CREATED
+2020-08-30 19:27:33,548 - 14352 INFO - create table if not exists dimension_exam_details(EXAM_ID INT NOT NULL PRIMARY KEY,
+                        EXAM_TYPE   VARCHAR(3),
+                        EXAM_DESCRIPTION    VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        EXAM_START_DATE DATETIME,
+                        EXAM_END_DATE   DATETIME) dimension_exam_details.sql 0.09s dimension_exam_details Table CREATED
+2020-08-30 19:27:33,646 - 14352 INFO - create table if not exists dimension_grade_details(GRADE_ID CHAR(2) NOT NULL PRIMARY KEY,
+                        GRADE_DESCRIPTION    CHAR(20),
+                        ACTIVE_FLAG CHAR(1),
+                        GRADE_START_DATE DATETIME,
+                        GRADE_END_DATE   DATETIME) dimension_grade_details.sql 0.1s dimension_grade_details Table CREATED
+2020-08-30 19:27:33,739 - 14352 INFO - create table if not exists dimension_payment_details(FEE_ID VARCHAR(10) NOT NULL PRIMARY KEY,
+                        FEES   BIGINT,
+                        FEES_TYPE  VARCHAR(15),
+                        ACTIVE_FLAG CHAR(1),
+                        PAYMENT_START_DATE DATETIME,
+                        PAYMENT_END_DATE   DATETIME) dimension_payment_details.sql 0.09s dimension_payment_details Table CREATED
+2020-08-30 19:27:33,840 - 14352 INFO - create table if not exists dimension_placement_details(COMPANY_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        COMPANY_NAME    VARCHAR(15),
+                        PLACEMENT_VENUE VARCHAR(50),
+                        PLACEMENT_DATE  DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        PLACEMENT_START_DATE DATETIME,
+                        PLACEMENT_END_DATE   DATETIME) dimension_placement_details.sql 0.1s dimension_placement_details Table CREATED
+2020-08-30 19:27:34,086 - 14352 INFO - create table if not exists dimension_staff_details(STAFF_ID VARCHAR(9) NOT NULL PRIMARY KEY,
+                        STAFF_NAME VARCHAR(25),
+                        STAFF_DOJ   DATE,
+                        ACTIVE_FLAG CHAR(1),
+                        STAFF_START_DATE DATETIME,
+                        STAFF_END_DATE   DATETIME) dimension_staff_details.sql 0.25s dimension_staff_details Table CREATED
+2020-08-30 19:27:34,267 - 14352 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.18s fact_academics Table CREATED
+2020-08-30 19:27:34,395 - 14352 INFO - create table if not exists fact_attendence(STUDENT_ID BIGINT NOT NULL,
+                     TIME_ID    INT,
+                     CURDATE    DATE,
+                     COURSE_ID  VARCHAR(9),
+                     STAFF_ID   VARCHAR(9),
+                     ATTENDENCE VARCHAR(5),
+                     ACTIVE_FLAG CHAR(1),
+                     ATTENDENCE_START_DATE DATETIME,
+                     ATTENDENCE_END_DATE   DATETIME,
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(STAFF_ID) REFERENCES dimension_staff_details(STAFF_ID)) fact_attendence.sql 0.13s fact_attendence Table CREATED
+2020-08-30 19:27:34,509 - 14352 INFO - create table if not exists fact_payment(STUDENT_ID BIGINT NOT NULL,
+                     FEE_ID    VARCHAR(10)   NOT NULL,
+                     PAYMENT_ID VARCHAR(9),
+                     ACTIVE_FLAG CHAR(1),
+                     PAYMENT_FACT_START_DATE DATETIME,
+                     PAYMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(FEE_ID) REFERENCES dimension_payment_details(FEE_ID)) fact_payment.sql 0.11s fact_payment Table CREATED
+2020-08-30 19:27:34,650 - 14352 INFO - create table if not exists fact_placement(STUDENT_ID BIGINT NOT NULL,
+                     DEP_ID    VARCHAR(9),
+                     COMPANY_ID VARCHAR(9),
+                     HIRED  VARCHAR(5),
+                     ACTIVE_FLAG CHAR(1),
+                     PLACEMENT_FACT_START_DATE DATETIME,
+                     PLACEMENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY(STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEP_ID) REFERENCES dimension_department_details(DEP_ID),
+					 FOREIGN KEY(COMPANY_ID) REFERENCES dimension_placement_details(COMPANY_ID)) fact_placement.sql 0.14s fact_placement Table CREATED
+2020-08-30 19:27:34,845 - 14352 INFO - create table if not exists fact_student(STUDENT_ID BIGINT NOT NULL,
+                     DEP_ID    VARCHAR(9)   NOT NULL,
+                     COURSE_ID VARCHAR(9),
+                     STAFF_ID   VARCHAR(9),
+                     ACTIVE_FLAG CHAR(1),
+                     STUDENT_FACT_START_DATE DATETIME,
+                     STUDENT_FACT_END_DATE   DATETIME,
+					 FOREIGN KEY(DEP_ID) REFERENCES dimension_department_details(DEP_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main(STUDENT_ID)) fact_student.sql 0.2s fact_student Table CREATED
+2020-08-30 19:27:34,848 - 14352 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/creation_ddl_update.py", line 35, in create_table\n    sqlfile = open(file_path, \'r\')\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\ddl\\\\__init__.sql'\n"]
+2020-08-30 19:28:04,142 - 19712 INFO - details_main Records Inserted
+2020-08-30 19:28:04,440 - 19712 INFO - dimension_calender_details Records Inserted
+2020-08-30 19:28:04,440 - 19712 INFO - dimension_calender_details Records Inserted
+2020-08-30 19:28:04,797 - 19712 INFO - dimension_course_details Records Inserted
+2020-08-30 19:28:04,797 - 19712 INFO - dimension_course_details Records Inserted
+2020-08-30 19:28:04,797 - 19712 INFO - dimension_course_details Records Inserted
+2020-08-30 19:28:05,022 - 19712 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:28:05,022 - 19712 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:28:05,022 - 19712 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:28:05,022 - 19712 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:28:05,198 - 19712 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:05,198 - 19712 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:05,198 - 19712 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:05,198 - 19712 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:05,198 - 19712 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:05,415 - 19712 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:05,415 - 19712 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:05,415 - 19712 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:05,415 - 19712 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:05,415 - 19712 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:05,415 - 19712 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:05,647 - 19712 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:05,647 - 19712 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:05,647 - 19712 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:05,647 - 19712 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:05,647 - 19712 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:05,647 - 19712 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:05,647 - 19712 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:05,848 - 19712 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:05,848 - 19712 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:05,848 - 19712 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:05,848 - 19712 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:05,848 - 19712 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:05,848 - 19712 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:05,848 - 19712 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:05,848 - 19712 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,091 - 19712 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,442 - 19712 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:06,881 - 19712 INFO - fact_academics Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:07,715 - 19712 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,165 - 19712 INFO - fact_payment Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:08,610 - 19712 INFO - fact_placement Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,049 - 19712 INFO - fact_student Records Inserted
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:09,178 - 19712 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:39,877 - 15720 INFO - details_main Records Inserted
+2020-08-30 19:28:40,266 - 15720 INFO - dimension_calender_details Records Inserted
+2020-08-30 19:28:40,266 - 15720 INFO - dimension_calender_details Records Inserted
+2020-08-30 19:28:40,661 - 15720 INFO - dimension_course_details Records Inserted
+2020-08-30 19:28:40,661 - 15720 INFO - dimension_course_details Records Inserted
+2020-08-30 19:28:40,661 - 15720 INFO - dimension_course_details Records Inserted
+2020-08-30 19:28:40,851 - 15720 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:28:40,851 - 15720 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:28:40,851 - 15720 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:28:40,851 - 15720 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:28:41,018 - 15720 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:41,018 - 15720 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:41,018 - 15720 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:41,018 - 15720 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:41,018 - 15720 INFO - dimension_department_details Records Inserted
+2020-08-30 19:28:41,213 - 15720 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:41,213 - 15720 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:41,213 - 15720 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:41,213 - 15720 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:41,213 - 15720 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:41,213 - 15720 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:28:41,506 - 15720 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:41,506 - 15720 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:41,506 - 15720 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:41,506 - 15720 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:41,506 - 15720 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:41,506 - 15720 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:41,506 - 15720 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:28:41,701 - 15720 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:41,701 - 15720 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:41,701 - 15720 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:41,701 - 15720 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:41,701 - 15720 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:41,701 - 15720 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:41,701 - 15720 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:41,701 - 15720 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:41,837 - 15720 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,117 - 15720 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:42,669 - 15720 INFO - fact_academics Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,351 - 15720 INFO - fact_attendence Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:43,867 - 15720 INFO - fact_payment Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,250 - 15720 INFO - fact_placement Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,639 - 15720 INFO - fact_student Records Inserted
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:28:44,828 - 15720 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:20,713 - 17428 INFO - details_main Records Inserted
+2020-08-30 19:29:21,009 - 17428 INFO - dimension_calender_details Records Inserted
+2020-08-30 19:29:21,009 - 17428 INFO - dimension_calender_details Records Inserted
+2020-08-30 19:29:21,489 - 17428 INFO - dimension_course_details Records Inserted
+2020-08-30 19:29:21,489 - 17428 INFO - dimension_course_details Records Inserted
+2020-08-30 19:29:21,489 - 17428 INFO - dimension_course_details Records Inserted
+2020-08-30 19:29:21,753 - 17428 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:29:21,753 - 17428 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:29:21,753 - 17428 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:29:21,753 - 17428 INFO - dimension_degree_details Records Inserted
+2020-08-30 19:29:21,941 - 17428 INFO - dimension_department_details Records Inserted
+2020-08-30 19:29:21,941 - 17428 INFO - dimension_department_details Records Inserted
+2020-08-30 19:29:21,941 - 17428 INFO - dimension_department_details Records Inserted
+2020-08-30 19:29:21,941 - 17428 INFO - dimension_department_details Records Inserted
+2020-08-30 19:29:21,941 - 17428 INFO - dimension_department_details Records Inserted
+2020-08-30 19:29:22,170 - 17428 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:29:22,170 - 17428 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:29:22,170 - 17428 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:29:22,170 - 17428 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:29:22,170 - 17428 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:29:22,170 - 17428 INFO - dimension_exam_details Records Inserted
+2020-08-30 19:29:22,556 - 17428 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:29:22,556 - 17428 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:29:22,556 - 17428 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:29:22,556 - 17428 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:29:22,556 - 17428 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:29:22,556 - 17428 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:29:22,556 - 17428 INFO - dimension_grade_details Records Inserted
+2020-08-30 19:29:22,804 - 17428 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:29:22,804 - 17428 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:29:22,804 - 17428 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:29:22,804 - 17428 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:29:22,804 - 17428 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:29:22,804 - 17428 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:29:22,804 - 17428 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:29:22,804 - 17428 INFO - dimension_payment_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,009 - 17428 INFO - dimension_placement_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,366 - 17428 INFO - dimension_staff_details Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:23,855 - 17428 INFO - fact_academics Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,538 - 17428 INFO - fact_attendence Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:24,995 - 17428 INFO - fact_payment Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,390 - 17428 INFO - fact_placement Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:25,905 - 17428 INFO - fact_student Records Inserted
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]
+2020-08-30 19:29:26,042 - 17428 DEBUG - ['Traceback (most recent call last):\n', '  File "c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src/main/insertion.py", line 35, in record_insertion\n    with open(file_path, \'r\') as read_file:\n', "FileNotFoundError: [Errno 2] No such file or directory: 'c:/Users/umapriya.krishnan/Desktop/angular/studentProject/backend/src\\\\files\\\\records\\\\__init__.csv'\n"]

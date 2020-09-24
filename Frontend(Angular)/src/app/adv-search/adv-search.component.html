@@ -1,0 +1,178 @@
+<div>
+  <div class = "first"> 
+    <div class="example-container">
+      <h2 style="font-family: Trebuchet MS, Helvetica, sans-serif;">SQL FUNCTIONS</h2>
+      <div
+        cdkDropList=]
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box-todo" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      </div>
+  </div>
+    
+  <div class="example-container1" >
+      <h2 style="margin-left:40px;font-family: Trebuchet MS, Helvetica, sans-serif;">SELECTED FUNCTIONS</h2>
+      <div
+        cdkDropList 
+        cdkDropListOrientation="horizontal"
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="example-list-done"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}<button (click)="resetdrag()">X</button></div>
+      </div>
+    </div>
+
+<div class = "dropdown">
+  <select (change)="seljoin($event)" *ngIf="joinval">
+    <option selected="selected">JOINS</option>
+    <option *ngFor = "let joins of join">{{joins}}</option>
+</select>
+<select (change)="seljointab1($event)" *ngIf="jointabval">
+    <option selected="selected">{{jointable1}}</option>
+    <option *ngFor = "let table of tableData">{{table.Tables_in_student}}</option>
+</select>
+<select (change)="seljointab2($event)" *ngIf="jointabval">
+    <option selected="selected">{{jointable2}}</option>
+    <option *ngFor = "let table of tableData">{{table.Tables_in_student}}</option>
+</select>
+  <select class = "table" (change)="seltab($event)" *ngIf="value1">
+      <option selected="selected">TABLES</option>
+      <option *ngFor = "let table of tableData">{{table.Tables_in_student}}</option>
+</select>
+<select (change)="selcol($event)" *ngIf = "aggval">
+    <option selected="selected">COLUMN TO DO AGGREGATE</option>
+    <option *ngFor = "let columns of colname">{{columns.COLUMN_NAME}}</option>
+</select>
+<select (change)="selagg($event)" *ngIf="aggval">
+  <option selected="selected">AGGREGATE FUNCTIONS</option>
+  <option *ngFor = "let func of agg">{{func}}</option>
+</select>
+<select (change)="selorderbycol($event)" *ngIf = "orderbyvalue">
+ <option selected="selected">ORDER BY COLUMNS</option>
+ <option *ngFor = "let columns of colname">{{columns.COLUMN_NAME}}</option>
+</select>
+  <select (change)="selanaltics($event)" *ngIf="analticalval">
+    <option selected="selected">FUNCTIONS</option>
+    <option *ngFor = "let functions of analtical">{{functions}}</option>
+    </select>
+    <select (change)="selpartitioncol($event)" *ngIf = "analticalval">
+    <option selected="selected">COLUMNS TO DO PARTITION</option>
+    <option *ngFor = "let columns of colname">{{columns.COLUMN_NAME}}</option>
+    </select>
+    <select (change)="selorderbycol($event)" *ngIf = "analticalval">
+    <option selected="selected">COLUMNS TO SORT</option>
+    <option *ngFor = "let columns of colname">{{columns.COLUMN_NAME}}</option>
+    </select>
+    <select (change)="selanalticalagg($event)" *ngIf = "analticalaggval">
+    <option selected="selected">COLUMN TO DO AGGREGATE</option>
+    <option *ngFor = "let columns of colname">{{columns.COLUMN_NAME}}</option>
+    </select>
+    <select (change)="selectedorder($event)" *ngIf = "orderbyvalue">
+      <option selected="selected">SORTING ORDER</option>
+      <option *ngFor = "let order of ordername">{{order}}</option>
+      </select>
+</div>
+<div class = "secondDd" *ngIf = "countvalue">
+  <select style = "margin-left: 67px;font-size:15px" id = "comp" name = "comp" (change)="selectedcomparator($event)" >  
+    <option [ngValue]="null" >COMPARISON OPERATORS</option>
+    <option *ngFor = "let comp of compname">{{comp}}</option> 
+  </select>
+  <input style = "margin-left: 43px;font-size:12px;font-family:Trebuchet MS, Helvetica, sans-serif;" type = "number" id = "count" name = "count" placeholder="VALUE" [(ngModel)] = "count_entered">     
+</div>
+  <br>
+  <br>
+  <div *ngIf="joincolval" class="columnselect">
+    <div class="example-container5">
+          <h2 style="font-size: 14px;">{{selectedtable1}}.join Column</h2>
+    <div
+      cdkDropList
+      #selectedtable1columnsarrayList="cdkDropList"
+      [cdkDropListData]="selectedtable1columnsarray"
+      [cdkDropListConnectedTo]="[selectedcolumnsList]"
+      class="example-list-select1"
+      (cdkDropListDropped)="drop2($event)">
+      <div class="example-box-select1" *ngFor="let cols of selectedtable1columnsarray" cdkDrag>{{cols}} <button (click)="removeselectedcols1(cols)">X</button></div>
+    </div>
+    </div>
+    <div class="example-container6">
+    <h2 style="font-size:14px;font-family:Trebuchet MS, Helvetica, sans-serif;">{{selectedtable2}}.join Column</h2>
+    <div
+      cdkDropList
+      #selectedtable2columnsarrayList="cdkDropList"
+      [cdkDropListData]="selectedtable2columnsarray"
+      [cdkDropListConnectedTo]="[selectedcolumnsList]"
+      class="example-list-select2"
+      (cdkDropListDropped)="drop2($event)">
+      <div class="example-box-select2" *ngFor="let cols of selectedtable2columnsarray" cdkDrag>{{cols}}<button (click)="removeselectedcols2(cols)">X</button></div>
+    </div>
+    </div>
+    <div class="example-container7">
+      <h2 style="font-size:14px;font-family:Trebuchet MS, Helvetica, sans-serif;">COLUMNS TO VIEW</h2>
+        <div
+          cdkDropList
+          #selectedcolumnsList="cdkDropList"
+          [cdkDropListData]="selectedcolumns"
+          [cdkDropListConnectedTo]="[selectedcolumns1arrayList,selectedcolumns2arrayList]"
+          class="example-list-coljoin"
+          (cdkDropListDropped)="drop2($event)">
+          <div class="example-box-select3" *ngFor="let cols of selectedcolumns" cdkDrag>{{cols}}<button (click)="removecolumnsjoin(cols)">X</button> </div>
+        </div>
+    </div>
+  </div>
+</div>
+    <div *ngIf = "groupbycolval" class="columngroup"> 
+      <div class="example-container3">
+          <h2 style="font-size:14px;font-family:Trebuchet MS, Helvetica, sans-serif;">COLUMNS AVAILABLE FOR GROUP BY</h2>
+          <div
+            cdkDropList
+            #todoList="cdkDropList"
+            [cdkDropListData]="colname"
+            [cdkDropListConnectedTo]="[doneList]"
+            class="example-list-groupby"
+            (cdkDropListDropped)="drop1($event)">
+            <div class="example-box-groupby" *ngFor="let columns of colname" cdkDrag>{{columns.COLUMN_NAME}}</div>
+          </div>
+      </div>
+      <div class="example-container4">
+          <h2 style="font-size:14px;font-family:Trebuchet MS, Helvetica, sans-serif;">SELECTED COLUMNS</h2>
+          <div
+            cdkDropList
+            #doneList="cdkDropList"
+            [cdkDropListData]="groupbyselectedcols"
+            [cdkDropListConnectedTo]="[todoList]"
+            class="example-list-groupdone"
+            (cdkDropListDropped)="drop1($event)">
+            <div class="example-box-groupdone" *ngFor="let item of groupbyselectedcols" cdkDrag>{{item.COLUMN_NAME}}</div>
+          </div>
+      </div>
+    </div>    
+
+<div *ngIf ="dispvalue">
+<link rel="stylesheet"
+    href="https://unpkg.com/@ag-grid-community/all-modules@23.0.0/dist/styles/ag-grid.css">
+
+<link rel="stylesheet"
+    href="https://unpkg.com/@ag-grid-community/all-modules@23.0.0/dist/styles/ag-theme-alpine.css">
+<ag-grid-angular
+  #agGrid
+  style="width: 1000px; height: 500px; margin-left: 70px;"
+  class="ag-theme-alpine"
+  [rowData]="name"
+  [columnDefs]="column"
+  [defaultColDef]="defaultColDef"
+  [gridOptions]="gridOptions"
+  [pagination]="true">
+</ag-grid-angular>
+</div>
+</div>
+<div class="example-button-row" >
+  <button style="margin-left: 70px; margin-top: 10px; font-size:14px;font-family:Trebuchet MS, Helvetica, sans-serif;" mat-flat-button color = "primary" (click)="query()">EXECUTE</button>
+</div>
+
+
+

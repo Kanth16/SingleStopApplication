@@ -1,0 +1,21 @@
+2020-09-01 11:38:01,047 - 4100 INFO - fact_academics Records Inserted
+2020-09-01 11:38:01,090 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:01] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-01 11:38:04,052 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:04] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-01 11:38:08,541 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:08] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:14,349 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:14] "[37mOPTIONS /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:14,698 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:14] "[37mPOST /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:15,441 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:15] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:21,125 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:21] "[37mOPTIONS /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:21,466 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:21] "[37mPOST /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:35,406 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:35] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:36,449 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:36] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-01 11:38:36,610 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:36] "[37mGET /select/undefined HTTP/1.1[0m" 200 -
+2020-09-01 11:38:40,758 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:40] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:45,090 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:45] "[37mOPTIONS /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:45,358 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:45] "[37mPOST /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:45,659 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:45] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:51,263 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:51] "[37mOPTIONS /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:51,536 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:51] "[37mPOST /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:52,407 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:52] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:59,574 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:59] "[37mOPTIONS /s_delete/fact_academics HTTP/1.1[0m" 200 -
+2020-09-01 11:38:59,853 - 4100 INFO - 127.0.0.1 - - [01/Sep/2020 11:38:59] "[37mPOST /s_delete/fact_academics HTTP/1.1[0m" 200 -

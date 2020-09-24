@@ -1,0 +1,7 @@
+2020-09-15 20:37:34,002 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:37:34] "[37mGET /select/dimension_course_details HTTP/1.1[0m" 200 -
+2020-09-15 20:37:39,308 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:37:39] "[37mGET /select/dimension_department_details HTTP/1.1[0m" 200 -
+2020-09-15 20:37:43,539 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:37:43] "[37mGET /select/dimension_grade_details HTTP/1.1[0m" 200 -
+2020-09-15 20:37:47,496 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:37:47] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 20:38:25,162 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:38:25] "[37mOPTIONS /update/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 20:38:25,479 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:38:25] "[37mPOST /update/dimension_payment_details HTTP/1.1[0m" 200 -
+2020-09-15 20:38:26,040 - 10184 INFO - 127.0.0.1 - - [15/Sep/2020 20:38:26] "[37mGET /select/dimension_payment_details HTTP/1.1[0m" 200 -

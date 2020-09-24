@@ -1,0 +1,364 @@
+2020-09-07 15:00:00,042 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.01s fact_academics Table CREATED
+2020-09-07 15:00:00,487 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:00:00,512 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.02s fact_academics Table CREATED
+2020-09-07 15:00:00,518 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:00:00,527 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.01s fact_academics Table CREATED
+2020-09-07 15:00:00,532 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:00:00,543 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.01s fact_academics Table CREATED
+2020-09-07 15:00:00,549 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:00:00,558 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.01s fact_academics Table CREATED
+2020-09-07 15:00:00,564 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:00:00,693 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:00:00,693 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:00:00,699 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:00] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:00:00,699 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:00] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:00:04,096 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:04] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:00:04,096 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:04] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:00:10,726 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:10] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:00:10,726 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:10] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:00:20,591 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:20] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:00:20,591 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:20] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:00:23,320 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:23] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:00:23,320 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:00:23] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:01:16,576 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.34s fact_academics Table CREATED
+2020-09-07 15:01:16,659 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:01:16] "[37mPOST /creation HTTP/1.1[0m" 200 -
+2020-09-07 15:01:18,158 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:01:18] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:01:31,758 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:01:31,758 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:01:31,845 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:01:31] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:01:31,845 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:01:31] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:01:32,800 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:01:32] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:01:32,800 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:01:32] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:01:37,513 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:01:37] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 15:01:37,513 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:01:37] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 15:02:16,655 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:16,655 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:16,655 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:16,832 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:16,832 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:16,832 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:16,893 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:16,893 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:16,893 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:16,949 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:16,949 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:16,949 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:17,004 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:17,004 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:17,004 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:17,106 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:17,106 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:17,106 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:17,157 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:17,157 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:17,157 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     NEW_COL INT,
+                     NEW_COL1 CHAR(2)
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.0s fact_academics Table CREATED
+2020-09-07 15:02:17,208 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:17,208 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:17,208 - 17372 INFO - fact_academics UPDATED
+2020-09-07 15:02:17,332 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:02:17,332 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:02:17,332 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:02:17,332 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:02:17,394 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:02:17] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:02:17,394 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:02:17] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:02:17,394 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:02:17] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:02:17,394 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:02:17] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:02:18,704 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:02:18] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:02:18,704 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:02:18] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:03:06,961 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:06] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:03:23,999 - 17372 INFO - create table if not exists fact_academics(STUDENT_ID BIGINT NOT NULL,
+                     DEGREE_ID  BIGINT,
+                     EXAM_ID    INT,
+                     MARKS  INT,
+                     COURSE_ID  VARCHAR(9),
+                     GRADE_ID   CHAR(2),
+                     ACTIVE_FLAG CHAR(1),
+                     ACADEMICS_START_DATE DATETIME,
+                     ACADEMICS_END_DATE   DATETIME,
+					 FOREIGN KEY (STUDENT_ID) REFERENCES details_main (STUDENT_ID),
+					 FOREIGN KEY(DEGREE_ID) REFERENCES dimension_degree_details(DEGREE_ID),
+					 FOREIGN KEY(COURSE_ID) REFERENCES dimension_course_details(COURSE_ID),
+					 FOREIGN KEY(EXAM_ID) REFERENCES dimension_exam_details(EXAM_ID),
+					 FOREIGN KEY(GRADE_ID) REFERENCES dimension_grade_details(GRADE_ID)) fact_academics.sql 0.22s fact_academics Table CREATED
+2020-09-07 15:03:24,900 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:24] "[37mPOST /creation HTTP/1.1[0m" 200 -
+2020-09-07 15:03:27,859 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:27] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:03:39,997 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:03:39,997 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:03:39,997 - 17372 INFO - fact_academics Records Inserted
+2020-09-07 15:03:40,667 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:03:40,667 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:03:40,667 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:40] "[37mPOST /insertion HTTP/1.1[0m" 200 -
+2020-09-07 15:03:42,230 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:03:42,230 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:03:42,230 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:42] "[37mGET /tables HTTP/1.1[0m" 200 -
+2020-09-07 15:03:46,034 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:46] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 15:03:46,034 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:46] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
+2020-09-07 15:03:46,034 - 17372 INFO - 127.0.0.1 - - [07/Sep/2020 15:03:46] "[37mGET /select/fact_academics HTTP/1.1[0m" 200 -
